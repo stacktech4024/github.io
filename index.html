@@ -1,67 +1,398 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Darren Billy | Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darren Billy | AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="main.js"></script>
-  </head>
+  <canvas id="bg-canvas"></canvas>
 
-  <body>
-    <div class="container">
-      <div class="card">
-        <header>
-          <img class="avatar" src="1757386157504.jpg" alt="Profile photo" />
-          <div>
-            <h1>Darren Billy</h1>
+  <nav>
+    <span class="nav-logo">DB<span class="accent">://</span></span>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <a href="mailto:Darrenbilly01@gmail.com" class="nav-cta">&gt; hire_me</a>
+  </nav>
 
-            <p class="tagline">
-              <span id="tagline-type" aria-label="Tagline"></span>
-              <span class="caret" aria-hidden="true">▍</span>
-            </p>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
 
-            <div class="actions">
-              <a class="btn" href="https://github.com/stacktech4024" target="_blank" rel="noreferrer">
-                View GitHub
-              </a>
+      <div class="hero-left">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="mono">// available_for_opportunities</span>
+        </div>
+        <h1 class="hero-name">Darren<br/><span class="outline">Billy</span></h1>
+        <div class="typewriter-wrap">
+          <span class="prompt mono">&gt;&nbsp;</span>
+          <span class="mono" id="typewriter"></span>
+          <span class="caret mono">▍</span>
+        </div>
+        <p class="hero-tagline">
+          Building LLM-powered systems, automation pipelines,<br/>and full-stack apps that make an impact.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">view_work()</a>
+          <a href="#contact" class="btn-ghost">contact.me →</a>
+        </div>
+        <div class="hero-links">
+          <a href="https://github.com/stacktech4024" target="_blank" class="hero-link mono">github://stacktech4024</a>
+          <a href="https://linkedin.com/in/db-cpga" target="_blank" class="hero-link mono">linkedin://db-cpga</a>
+          <a href="mailto:darren.billy@dcmail.ca" class="hero-link mono">mail://dcmail.ca</a>
+        </div>
+      </div>
 
-              <button class="btn btn-ghost" id="copy-github" type="button">
-                Copy GitHub
-              </button>
-
-              <span class="toast" id="toast" role="status" aria-live="polite"></span>
-            </div>
-
-            <p class="small">
-              GitHub:
-              <a href="https://github.com/stacktech4024" target="_blank" rel="noreferrer">
-                github.com/stacktech4024
-              </a>
-            </p>
+      <div class="hero-right">
+        <div class="avatar-3d-wrap">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="avatar-frame">
+            <img src="images/profile.jpg" alt="Darren Billy" class="avatar-img" />
+            <div class="avatar-overlay"></div>
           </div>
-        </header>
+          <div class="hud-dot hud-tl"></div>
+          <div class="hud-dot hud-tr"></div>
+          <div class="hud-dot hud-bl"></div>
+          <div class="hud-dot hud-br"></div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">50<span class="accent">+</span></span>
+            <span class="stat-label mono">clients</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">9<span class="accent">+</span></span>
+            <span class="stat-label mono">projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">3<span class="accent">+</span></span>
+            <span class="stat-label mono">years</span>
+          </div>
+        </div>
+      </div>
 
-        <section class="reveal">
-          <h2>Featured Projects</h2>
-          <ul>
-            <li>
-              <a href="https://github.com/stacktech4024/OOP-3-Final-Project-Unity" target="_blank" rel="noreferrer">
-                OOP-3-Final-Project-Unity
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/stacktech4024/Screen-Shot-Extractor" target="_blank" rel="noreferrer">
-                Screen-Shot-Extractor
-              </a>
-            </li>
-          </ul>
-          <p class="small">Only public projects are linked.</p>
-        </section>
+    </div>
+  </section>
 
-        <footer class="small">Last updated: 2026-03-21</footer>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono section-tag">&lt;about /&gt;</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm an <strong>aspiring AI Engineer</strong> pursuing a BSc in Artificial Intelligence at Trent University, with an Advanced Diploma in Computer Programming from Durham College.</p>
+          <p>As founder of <strong>Top Recruit Tapes</strong>, I built a tech-driven media brand serving 50+ clients — designing automation tools and AI-assisted workflows from scratch.</p>
+          <p>Outside of code I'm a hobbyist <strong>photographer & videographer</strong> — a good eye for composition makes me a sharper designer too.</p>
+        </div>
+        <div class="about-cards">
+          <div class="info-card">
+            <span class="info-icon mono">[edu]</span>
+            <div>
+              <div class="info-label mono">currently_studying</div>
+              <div class="info-value">BSc AI — Trent University</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon mono">[loc]</span>
+            <div>
+              <div class="info-label mono">location</div>
+              <div class="info-value">Ontario, Canada</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon mono">[dev]</span>
+            <div>
+              <div class="info-label mono">building_now</div>
+              <div class="info-value">Whisper · Brief-Scout · Mindful Bloom</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon mono">[mail]</span>
+            <div>
+              <div class="info-label mono">student_email</div>
+              <div class="info-value">darren.billy@dcmail.ca</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono section-tag">&lt;skills /&gt;</span>
+        <h2 class="section-title">Tech Stack</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <div class="skill-block-title mono">// languages</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item"><span class="mono skill-name">Python</span><div class="bar"><div class="bar-fill" style="--w:90%"></div></div></div>
+            <div class="skill-bar-item"><span class="mono skill-name">JavaScript</span><div class="bar"><div class="bar-fill" style="--w:88%"></div></div></div>
+            <div class="skill-bar-item"><span class="mono skill-name">TypeScript</span><div class="bar"><div class="bar-fill" style="--w:80%"></div></div></div>
+            <div class="skill-bar-item"><span class="mono skill-name">Java</span><div class="bar"><div class="bar-fill" style="--w:75%"></div></div></div>
+            <div class="skill-bar-item"><span class="mono skill-name">C#</span><div class="bar"><div class="bar-fill" style="--w:70%"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-title mono">// frameworks</div>
+          <div class="skill-tags-wrap">
+            <span class="stag">Angular</span><span class="stag">Ionic</span><span class="stag">React</span>
+            <span class="stag">Next.js</span><span class="stag">Node.js</span><span class="stag">Express</span>
+            <span class="stag">Tailwind</span><span class="stag">Selenium</span><span class="stag">Unity</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-title mono">// ai_&_data</div>
+          <div class="skill-tags-wrap">
+            <span class="stag accent-tag">Gemini API</span><span class="stag accent-tag">OpenAI API</span>
+            <span class="stag">Scikit-learn</span><span class="stag">Pandas</span>
+            <span class="stag">TensorFlow</span><span class="stag">n8n</span><span class="stag">Matplotlib</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-title mono">// databases_&_cloud</div>
+          <div class="skill-tags-wrap">
+            <span class="stag">Firebase</span><span class="stag">MongoDB</span><span class="stag">PostgreSQL</span>
+            <span class="stag">SQL Server</span><span class="stag">AWS</span><span class="stag">Docker</span>
+            <span class="stag">Postman</span><span class="stag">Leaflet.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono section-tag">&lt;projects /&gt;</span>
+        <h2 class="section-title">Things I've Built</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="proj-card featured-card">
+          <div class="proj-num mono">01 // featured</div>
+          <h3 class="proj-title">Top Recruit Tapes</h3>
+          <p class="proj-desc">Founded & built a tech-driven media brand serving 50+ athlete clients. Designed automation tools, AI-assisted workflows, and end-to-end delivery systems as sole technical architect.</p>
+          <div class="proj-tags"><span class="ptag">JavaScript</span><span class="ptag">Automation</span><span class="ptag">UI/UX</span></div>
+          <a href="https://www.toprecruittapes.com/" target="_blank" class="proj-link mono">→ live_site</a>
+        </div>
+
+        <div class="proj-card featured-card">
+          <div class="proj-num mono">02 // mobile</div>
+          <h3 class="proj-title">Whisper App</h3>
+          <p class="proj-desc">Full-stack mobile app with real-time data, Firebase auth, location-based Leaflet.js maps, lazy-loaded routing and Angular route guards.</p>
+          <div class="proj-tags"><span class="ptag">Angular</span><span class="ptag">Ionic</span><span class="ptag">Firebase</span><span class="ptag">Leaflet.js</span></div>
+          <a href="https://github.com/stacktech4024" target="_blank" class="proj-link mono">→ view_repo</a>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-num mono">03</div>
+          <h3 class="proj-title">Gemini AI Tutor</h3>
+          <p class="proj-desc">Desktop AI tutoring system with Gemini API, PDF processing, and curriculum-based context injection.</p>
+          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Gemini API</span></div>
+          <a href="https://github.com/stacktech4024" target="_blank" class="proj-link mono">→ view_repo</a>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-num mono">04</div>
+          <h3 class="proj-title">Brief-Scout</h3>
+          <p class="proj-desc">AI soccer scouting tool generating match summaries and player insights with Next.js and AI APIs.</p>
+          <div class="proj-tags"><span class="ptag">Next.js</span><span class="ptag">AI APIs</span><span class="ptag">Tailwind</span></div>
+          <a href="https://github.com/stacktech4024" target="_blank" class="proj-link mono">→ view_repo</a>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-num mono">05</div>
+          <h3 class="proj-title">RSVP Automation Engine</h3>
+          <p class="proj-desc">Browser automation replacing manual attendance tracking with month-level analytics and zero manual input.</p>
+          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Selenium</span></div>
+          <a href="https://github.com/stacktech4024" target="_blank" class="proj-link mono">→ view_repo</a>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-num mono">06</div>
+          <h3 class="proj-title">Animal API</h3>
+          <p class="proj-desc">RESTful API with full CRUD, search functionality, and scalable Express + MongoDB backend architecture.</p>
+          <div class="proj-tags"><span class="ptag">Node.js</span><span class="ptag">Express</span><span class="ptag">MongoDB</span></div>
+          <a href="https://github.com/LuckyNumber77/assignment4-spa" target="_blank" class="proj-link mono">→ view_repo</a>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-num mono">07</div>
+          <h3 class="proj-title">Mindful Bloom</h3>
+          <p class="proj-desc">Hackathon AI wellness app — daily journaling, mood avatar tracking, and AI-driven personal insights.</p>
+          <div class="proj-tags"><span class="ptag">React</span><span class="ptag">Tailwind</span><span class="ptag">Snowflake</span></div>
+          <a href="https://github.com/stacktech4024" target="_blank" class="proj-link mono">→ view_repo</a>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-num mono">08</div>
+          <h3 class="proj-title">Screenshot Extractor</h3>
+          <p class="proj-desc">Python OCR tool extracting video metadata from screenshots and exporting structured data to Excel.</p>
+          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">OCR</span><span class="ptag">Automation</span></div>
+          <a href="https://github.com/LuckyNumber77/Screen-Shot-Extractor" target="_blank" class="proj-link mono">→ view_repo</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono section-tag">&lt;experience /&gt;</span>
+        <h2 class="section-title">Where I've Worked</h2>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="mono exp-date">2022 — present</span>
+            <div class="exp-line"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Founder & Automation Developer</div>
+            <div class="exp-company mono">// Top Recruit Tapes</div>
+            <p class="exp-desc">Built and operate a technology-driven media brand serving 50+ clients. Implemented AI-assisted workflows, automation tools, and end-to-end technical delivery systems.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="mono exp-date">2024 — 2025</span>
+            <div class="exp-line"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Social Media Assistant</div>
+            <div class="exp-company mono">// Durham College</div>
+            <p class="exp-desc">Analyzed engagement data and structured reports to support institutional decision-making. Applied workflow improvements across digital campaigns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono section-tag">&lt;education /&gt;</span>
+        <h2 class="section-title">Academic Background</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-badge mono">BSc</div>
+          <div class="edu-degree">Artificial Intelligence</div>
+          <div class="edu-school mono">Trent University</div>
+          <div class="edu-year mono">2025 – 2028</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-badge mono">Dip</div>
+          <div class="edu-degree">Computer Programming & Analysis</div>
+          <div class="edu-school mono">Durham College</div>
+          <div class="edu-year mono">2023 – 2025</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-badge mono">Cert</div>
+          <div class="edu-degree">Excel Skills for Business</div>
+          <div class="edu-school mono">Specialization</div>
+          <div class="edu-year mono">Completed</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-badge mono">AWS</div>
+          <div class="edu-degree">Cloud Foundations</div>
+          <div class="edu-school mono">Amazon Web Services</div>
+          <div class="edu-year mono">Completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="mono section-tag">&lt;contact /&gt;</span>
+        <h2 class="section-title">Let's Build Something</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <p class="contact-intro">Open to internships, freelance work, and interesting AI or full-stack projects. Let's connect.</p>
+          <div class="contact-links">
+            <a href="mailto:Darrenbilly01@gmail.com" class="clink">
+              <span class="clink-icon mono">[✉]</span>
+              <div>
+                <div class="clink-label mono">personal_email</div>
+                <div class="clink-val">Darrenbilly01@gmail.com</div>
+              </div>
+            </a>
+            <a href="mailto:darren.billy@dcmail.ca" class="clink">
+              <span class="clink-icon mono">[✉]</span>
+              <div>
+                <div class="clink-label mono">student_email</div>
+                <div class="clink-val">darren.billy@dcmail.ca</div>
+              </div>
+            </a>
+            <a href="https://github.com/stacktech4024" target="_blank" class="clink">
+              <span class="clink-icon mono">[gh]</span>
+              <div>
+                <div class="clink-label mono">github</div>
+                <div class="clink-val">github.com/stacktech4024</div>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/db-cpga" target="_blank" class="clink">
+              <span class="clink-icon mono">[in]</span>
+              <div>
+                <div class="clink-label mono">linkedin</div>
+                <div class="clink-val">linkedin.com/in/db-cpga</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <label class="mono form-label">name_</label>
+            <input type="text" class="form-input" placeholder="Your name" required />
+          </div>
+          <div class="form-row">
+            <label class="mono form-label">email_</label>
+            <input type="email" class="form-input" placeholder="your@email.com" required />
+          </div>
+          <div class="form-row">
+            <label class="mono form-label">message_</label>
+            <textarea class="form-input form-textarea" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit" id="submit-btn">send_message()</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="mono footer-copy">© 2026 Darren Billy // built with care</span>
+    <a href="#home" class="mono footer-top">↑ back_to_top</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>
