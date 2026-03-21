@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0a0f,50:185fa5,100:4f8ef7&height=200&section=header&text=Darren%20Billy&fontSize=58&fontColor=ffffff&fontAlignY=38&desc=%2F%2F%20AI_Engineer()%20%7C%20Full_Stack_Dev()%20%7C%20Builder()&descSize=16&descAlignY=58&animation=fadeIn&fontFamily=monospace" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0a0f,50:185fa5,100:4f8ef7&height=200&section=header&text=Darren%20Billy&fontSize=58&fontColor=ffffff&fontAlignY=38&desc=%2F%2F%20AI_Engineer()%20%7C%20Application_Developer()%20%7C%20Automation_Engineer()&descSize=14&descAlignY=58&animation=fadeIn&fontFamily=monospace" />
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ```bash
 $ whoami
-> Darren Billy — Aspiring AI Engineer & Full-Stack Developer
+> Darren Billy — AI Engineer | Application Developer | Automation Engineer
 > Ontario, Canada | Open to internships & opportunities
 
 $ cat about.txt
@@ -36,7 +36,7 @@ $ cat about.txt
 
 - 🎓 **BSc Artificial Intelligence** @ **Trent University** *(2025–2028)*
 - 🏫 **Advanced Diploma — Computer Programming & Analysis** @ **Durham College** *(2023–2025)*
-- 🤖 Aspiring **AI Engineer** — integrating Gemini & OpenAI APIs, building automation pipelines
+- 🤖 Aspiring **AI Engineer** & **Automation Engineer** — integrating Gemini & OpenAI APIs, building automation pipelines
 - 🚀 Founder of **[Top Recruit Tapes](https://www.toprecruittapes.com/)** — tech-driven media brand serving 50+ clients
 - 📱 Built **Whisper** — full-stack mobile app with Angular, Ionic, Firebase & Leaflet.js maps
 - 🧠 Currently exploring **ML, LLM-powered systems & n8n workflow automation**
