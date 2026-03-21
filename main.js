@@ -81,9 +81,9 @@
   // ── TYPEWRITER ──
   const phrases = [
     'AI_Engineer()',
+    'Application_Developer()',
+    'Automation_Engineer()',
     'Full_Stack_Dev()',
-    'Builder()',
-    'Automation_Architect()',
     'ML_Enthusiast()',
   ];
   const el = document.getElementById('typewriter');
