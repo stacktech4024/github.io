@@ -1,136 +1,123 @@
-/* ----------------------------------------------------
- *  GLOBAL FONTS & DEFAULTS
- * -------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root {
+  --bg: #0b1220;
+  --text: #e8eefc;
+  --muted: #b9c4e3;
+  --link: #7dd3fc;
+  --border: rgba(255, 255, 255, 0.12);
+  --card: rgba(17, 26, 46, 0.88);
+  --btn: rgba(255, 255, 255, 0.08);
+  --btnHover: rgba(255, 255, 255, 0.14);
+}
+
+* { box-sizing: border-box; }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f8fafc;
-  scroll-behavior: smooth;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(1200px 800px at 20% 10%, #1b2a4a 0%, transparent 55%),
+    radial-gradient(900px 700px at 80% 20%, #2a1b4a 0%, transparent 55%),
+    var(--bg);
+  color: var(--text);
 }
 
-.gradient-text {
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* ----------------------------------------------------
- *  CARDS & HOVER LIFT
- * -------------------------------------------------- */
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* ----------------------------------------------------
- *  TYPEWRITER HEADLINE
- * -------------------------------------------------- */
-.typewriter {
-  overflow: hidden;                 /* hides unrevealed text */
-  border-right: .15em solid #3b82f6;/* blinking “cursor”  */
-  white-space: nowrap;              /* single-line on lg screens */
+.container {
+  max-width: 980px;
   margin: 0 auto;
-  letter-spacing: .15em;
-  animation:
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+  padding: 28px 18px 60px;
 }
 
-/* type reveal */
-@keyframes typing {
-  from { width: 0; }
-  to   { width: 100%; }
-}
-/* cursor blink */
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50%      { border-color: #3b82f6; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
-/* ----------------------------------------------------
- *  FLOATING ORBS (decoration)
- * -------------------------------------------------- */
-.floating {
-  animation: floating 3s ease-in-out infinite;
-}
-@keyframes floating {
-  0%   { transform: translate(0,  0px); }
-  50%  { transform: translate(0, 15px); }
-  100% { transform: translate(0, -0px); }
+header {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  align-items: center;
 }
 
-/* ----------------------------------------------------
- *  ACCESSIBILITY – RESPECT REDUCED-MOTION
- * -------------------------------------------------- */
+img.avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+h1 { margin: 0; font-size: 28px; }
+.tagline { margin: 6px 0 0; color: var(--muted); min-height: 1.4em; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+section { margin-top: 18px; }
+h2 { margin: 0 0 10px; font-size: 18px; }
+ul { margin: 0; padding-left: 18px; color: var(--muted); }
+li { margin: 6px 0; }
+
+.small { color: var(--muted); font-size: 13px; margin-top: 10px; }
+footer { margin-top: 18px; }
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--btn);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn:hover { background: var(--btnHover); text-decoration: none; }
+
+.btn-ghost {
+  background: transparent;
+}
+
+.toast {
+  color: var(--muted);
+  font-size: 13px;
+  min-height: 1em;
+}
+
+.caret {
+  display: inline-block;
+  transform: translateY(-1px);
+  animation: blink 1s steps(2, start) infinite;
+  color: var(--muted);
+}
+@keyframes blink { to { visibility: hidden; } }
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .typewriter {
-    animation: none !important;
-    border-right: none !important;
-  }
-}
-
-/* ----------------------------------------------------
- *  MOBILE (< 768 px) OVERRIDES
- * -------------------------------------------------- */
-@media (max-width: 767px) {
-  .typewriter {
-    /* 1️⃣  allow natural wrapping but keep animation & cursor */
-    white-space: normal !important;     /* multi-line */
-    overflow: hidden !important;        /* still hide unrevealed chars */
-    animation:                           /* re-attach original anims */
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-    text-align: center;                 /* center ↓ name & job titles */
-  }
-}
-
-/* ----------------------------------------------------
- *  BUTTON UTILITY (ensures centered labels)
- * -------------------------------------------------- */
-button,
-.btn,
-.btn-primary,
-.btn-secondary {
-  text-align: center;   /* keep label centred on all breakpoints */
-}
-
-/* =========================================================
- *  ─── HERO / TYPEWRITER  DESKTOP SAFETY NET ───────────────
- *  Put this snippet LAST in style.css so it overrides earlier
- *  rules only when it needs to.
- * ======================================================= */
-
-/* a tiny-bit tighter tracking so long lines fit more often */
-.typewriter {
-  letter-spacing: 0.12em;                 /* was .15em */
-}
-
-/* after the typing animation completes (3.5 s) we add a
-   utility-class that: hides the cursor + allows wrapping   */
-@keyframes typingDone { to { visibility: visible; } }
-
-.typewriter.is-done {                     /* toggled by JS */
-  animation: none !important;             /* stop typing   */
-  border-right: none !important;          /* hide cursor   */
-  overflow: visible !important;           /* show all text */
-  white-space: normal !important;         /* may wrap      */
-}
-
-/* If, even after the tweak above, the single-line string is
-   STILL wider than the space you gave it (e.g. on laptop
-   widths when the photo is beside it), we let it wrap -
-   only for ≥ 1024 px – so mobiles keep the centred layout   */
-@media (min-width: 1024px) {
-  .typewriter {
-    max-width: 100%;                      /* never clipped */
-    overflow-wrap: break-word;            /* safe breaks   */
-    white-space: nowrap;                  /* keep single   */
-  }
-  .typewriter.is-done {
-    white-space: normal;                  /* ⇢ may wrap    */
-  }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .caret { animation: none; }
 }
